@@ -1,0 +1,31 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "rm -rf package-lock.json && npm install",
+  "env": {
+    "NEXT_PUBLIC_SUPABASE_URL": "@supabase_url",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@supabase_anon_key",
+    "SUPABASE_SERVICE_ROLE_KEY": "@supabase_service_role_key",
+    "SMS_API_USERNAME": "@sms_api_username",
+    "SMS_API_PASSWORD": "@sms_api_password",
+    "JWT_SECRET": "@jwt_secret"
+  },
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_SUPABASE_URL": "@supabase_url",
+      "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@supabase_anon_key",
+      "SUPABASE_SERVICE_ROLE_KEY": "@supabase_service_role_key",
+      "SMS_API_USERNAME": "@sms_api_username",
+      "SMS_API_PASSWORD": "@sms_api_password",
+      "JWT_SECRET": "@jwt_secret"
+    }
+  },
+  "regions": ["iad1"],
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    }
+  ]
+}

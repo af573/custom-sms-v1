@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Premium SMS API</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #3b82f6 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .welcome-message {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .welcome-message h2 {
+            font-size: 24px;
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+        
+        .welcome-message p {
+            font-size: 16px;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        
+        .cta-button {
+            display: block;
+            width: fit-content;
+            margin: 30px auto;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #3b82f6 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .features {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+        
+        .features h3 {
+            font-size: 18px;
+            color: #1f2937;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            color: #4b5563;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .footer {
+            background: #1f2937;
+            color: #9ca3af;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #6b7280;
+            text-decoration: none;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+            margin: 30px 0;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .header, .content, .footer {
+                padding: 25px 20px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .welcome-message h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">⚡</div>
+            <h1>Welcome to Premium SMS API</h1>
+            <p>Your elite developer platform awaits</p>
+        </div>
+        
+        <div class="content">
+            <div class="welcome-message">
+                <h2>Confirm Your Account</h2>
+                <p>Thank you for joining our premium SMS API platform. You're just one click away from accessing enterprise-grade messaging capabilities.</p>
+            </div>
+            
+            <a href="{{ .RedirectTo }}/auth/confirm?token_hash={{ .TokenHash }}&type=email" class="cta-button">
+                Activate Premium Account
+            </a>
+            
+            <div class="features">
+                <h3>🚀 What's Included in Your Account</h3>
+                <ul class="feature-list">
+                    <li>Enterprise-grade SMS API with 99.9% uptime</li>
+                    <li>Global reach to 190+ countries</li>
+                    <li>Real-time delivery tracking & analytics</li>
+                    <li>Advanced rate limiting & security</li>
+                    <li>Priority customer support</li>
+                    <li>Comprehensive developer documentation</li>
+                </ul>
+            </div>
+            
+            <div class="divider"></div>
+            
+            <p style="text-align: center; color: #6b7280; font-size: 14px;">
+                If you didn't create this account, you can safely ignore this email.
+                <br><br>
+                This confirmation link will expire in 24 hours.
+            </p>
+        </div>
+        
+        <div class="footer">
+            <p><strong>Premium SMS API Platform</strong></p>
+            <p>Engineered with excellence by 〲ɱ๏ɳᴀʳᴄʰ ⌾ғ sʜᴀᴅᵒʷˢ〴</p>
+            
+            <div class="social-links">
+                <a href="#">Documentation</a>
+                <a href="#">Support</a>
+                <a href="#">Status</a>
+            </div>
+            
+            <p style="font-size: 12px; margin-top: 20px;">
+                © 2024 Premium SMS API. All rights reserved.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
